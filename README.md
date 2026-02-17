@@ -60,6 +60,12 @@ OpenAlias ships with three themes:
 | **Cool** | Light blue-grey with slate accents |
 | **Dark** | Dark mode with muted purple accents |
 
+Additional built-in test themes: **Forest**, **Sunset**, and **Midnight**.
+
+To add your own theme quickly, edit [includes/themes.php](includes/themes.php) and add a new entry in `oa_theme_definitions()` with:
+- `label` and `description`
+- CSS variables in `vars` (including colors and `oa-radius*` values)
+
 You can also write custom CSS in **Settings → Appearance**. All styles use CSS custom properties prefixed with `--oa-` for easy overriding.
 
 ## Project Structure

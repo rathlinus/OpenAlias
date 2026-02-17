@@ -14,7 +14,7 @@ $db = new Database(DB_PATH);
 if ($db->getUserCount() === 0) {
     $route = 'setup';
 } else {
-    $route = trim($_GET['route'] ?? '', '/');
+    $route = oa_detect_route();
 }
 
 switch (true) {
@@ -42,7 +42,7 @@ switch (true) {
     // ── Login ──
     case $route === 'login':
         if (isAuthenticated()) {
-            header('Location: ' . APP_URL . '/dashboard');
+            header('Location: ' . oa_url('dashboard'));
             exit;
         }
         require __DIR__ . '/pages/login.php';
